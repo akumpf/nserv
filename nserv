@@ -140,7 +140,7 @@ function addApp(domain, callback){
                       port: port
                     }                   
                     newConfig = JSON.stringify(config);
-                    exec('PORT=' + port + ' forever start ' + appCode + 'server.js', function(err){
+                    exec('PORT=' + port + ' forever start -w ' + appCode + 'server.js', function(err){
                       if(err){
                         sendError("Could not start application.", err);
                       }
